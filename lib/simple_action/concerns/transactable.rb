@@ -24,7 +24,7 @@ module SimpleAction
       return unless block_given?
 
       if transaction?
-        ActiveRecord::Base.transaction(transaction_options) do
+        ActiveRecord::Base.transaction(**transaction_options) do
           yield
         end
       else
